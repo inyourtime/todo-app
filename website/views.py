@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect
 from .models import Todo
 from . import db
 
-views = Blueprint('views', __name__)
+views = Blueprint('views', __name__, static_folder='static', template_folder='templates')
 
 
 @views.route('/', methods=['POST', 'GET'])
