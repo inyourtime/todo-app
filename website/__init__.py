@@ -14,9 +14,4 @@ def create_app():
 
     app.register_blueprint(views, url_prefix='')
 
-    from .models import Todo
-
-    with app.app_context():
-        db.create_all()
-
     return app

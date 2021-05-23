@@ -1,9 +1,10 @@
 from flask import Blueprint, render_template, request, redirect
 from .models import Todo
 from . import db
+from flask_cors import CORS
 
 views = Blueprint('views', __name__, static_folder='static', template_folder='templates')
-
+CORS(views)
 
 @views.route('/', methods=['POST', 'GET'])
 def home():
